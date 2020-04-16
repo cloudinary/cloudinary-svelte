@@ -1,0 +1,9 @@
+.idea
+.vscode
+.DS_Store
+.nvmrc
+node_modules
+dist
+package-lock.json
+yarn.lock
+cloudinary-svelte*.tgz
