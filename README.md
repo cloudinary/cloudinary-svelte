@@ -38,28 +38,41 @@ npm i cloudinary-svelte
   }
 </style>
 
-<Image
-  cloud_name="demo"
-  public_id="sample"
-  transformation="{[
-    { width: 400, height: 400, gravity: 'face', radius: 'max', crop: 'crop' },
-    { width: 200, crop: 'scale' }
-  ]}"
-/>
-
-<Video
-  cloud_name="demo"
-  public_id="dog"
-  transformation={{ angle: 20 }}
-  controls
-  muted
-/>
+<main>
+    <Image
+      cloud_name="demo"
+      public_id="sample"
+      transformation="{[
+        { width: 400, height: 400, gravity: 'face', radius: 'max', crop: 'crop' },
+        { width: 200, crop: 'scale' }
+      ]}"
+    />
+    
+    <Video
+      cloud_name="demo"
+      public_id="dog"
+      transformation={{ angle: 20 }}
+      controls
+      muted
+    />
+</main>
 ```
 
 #### Image result:
 <div>
     <img alt="sample" src="http://res.cloudinary.com/demo/image/upload/c_crop,g_face,h_400,r_max,w_400/c_scale,w_200/sample">
 </div>
+
+#### Video result:
+The video component will generate this html:
+([See actual video here](http://res.cloudinary.com/demo/video/upload/a_20/dog.mp4))
+```html
+<video controls muted poster="http://res.cloudinary.com/demo/video/upload/a_20/dog.jpg">
+    <source src="http://res.cloudinary.com/demo/video/upload/a_20/dog.webm" type="video/webm">
+    <source src="http://res.cloudinary.com/demo/video/upload/a_20/dog.mp4" type="video/mp4">
+    <source src="http://res.cloudinary.com/demo/video/upload/a_20/dog.ogv" type="video/ogg">
+</video>
+```
 
 ## Documentation:
 
