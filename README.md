@@ -1,6 +1,6 @@
 # cloudinary-svelte
 
-[Cloudinary](https://cloudinary.com) components library for Svelte
+##[Cloudinary](https://cloudinary.com) components library for Svelte
 
 Cloudinary is a cloud service that offers a solution to a web application's entire image management pipeline.
 
@@ -25,8 +25,18 @@ npm i cloudinary-svelte
 ## Usage Example
    
 ```js
-import {Image, Video} from 'cloudinary-react';
+<script>
+  import { Image, Video } from 'cloudinary-svelte';
+</script>
 
+<style>
+  main {
+    text-align: center;
+    padding: 1em;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+</style>
 
 <Image
   cloud_name="demo"
@@ -46,10 +56,17 @@ import {Image, Video} from 'cloudinary-react';
 />
 ```
 
+#### Image result:
+<div>
+    <img alt="sample" src="http://res.cloudinary.com/demo/image/upload/c_crop,g_face,h_400,r_max,w_400/c_scale,w_200/sample">
+</div>
+
+## Documentation:
+
 The Cloudinary Documentation can be found at:
 http://cloudinary.com/documentation
 
-## Additional resources
+### Additional resources
 
 Additional resources are available at:
 
