@@ -1,6 +1,10 @@
 {
-  "name": "cloudinary-svelte",
-  "version": "1.0.0-alpha.0",
+  "author": "Cloudinary <info@cloudinary.com>",
+  "name": "@cloudinary/svelte",
+  "description": "Cloudinary components library for Svelte",
+  "homepage": "http://cloudinary.com",
+  "license": "MIT",
+  "version": "0.0.1-alpha.0",
   "svelte": "dist/cloudinary-svelte.mjs",
   "module": "dist/cloudinary-svelte.mjs",
   "main": "dist/cloudinary-svelte.js",
@@ -8,8 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/cloudinary/cloudinary-svelte.git"
   },
-  "author": "Cloudinary",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/cloudinary/cloudinary-svelte/issues"
   },
