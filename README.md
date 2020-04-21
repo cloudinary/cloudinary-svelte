@@ -11,22 +11,54 @@ Cloudinary offers comprehensive APIs and administration capabilities and is easy
 Cloudinary provides URL and HTTP based APIs that can be easily integrated with any Web development framework.
 
 
-## Components
-* [Image](https://nirmaoz.github.io/cloudinary-svelte/?path=/docs/image--sample)
-* [Video](https://nirmaoz.github.io/cloudinary-svelte/?path=/docs/video--sample)
-
-
 ## Installation
+Install the package using the following command:
 
 ```shell
-npm i cloudinary-svelte
+npm i @cloudinary/svelte
 ```
+
+## Setup
+1. Include the cloudinary-svelte package in your code, for example: 
+    ```javascript
+    import { Image, Video } from '@cloudinary/svelte';
+    ```
+    
+2. Add an Image or Video component in your html:
+    ```html
+    <Image.../> <Video.../>
+    ```
+3. Pass the required parameters to the component:
+    ```javascript
+    // cloud_name - is your Cloudinary account
+    // public_id  - is the asset identifier in your Cloudinary account
+    //              (usually the file name without a file extension)
+    <Image cloud_name="demo" public_id="sample" …{any <img> tag attributes}/>
+    ```
+4. To fetch a transformed asset, you can pass a transformation parameter to the Image or Video components.  
+   For example, this transformation will alter the image URL to fetch the same image scaled to 200px:  
+    ```javascript
+   transformation = “{ width: 200, crop: ‘scale’ }”  
+    ```   
+   The transformation object can be an array of transformations,  
+   where each transformation is applied to the result of the previous transformation, for example:  
+    ```javascript
+    transformation="{[
+     { width: 400, height: 400, gravity: 'face', radius: 'max', crop: 'crop' },
+     { width: 200, crop: 'scale' }
+    ]}"
+    ```
+
+## Components
+* [Image](https://cloudinary.github.io/cloudinary-svelte/?path=/docs/image--sample)
+* [Video](https://cloudinary.github.io/cloudinary-svelte/?path=/docs/video--sample)
+
 
 ## Usage Example
    
-```js
+```html
 <script>
-  import { Image, Video } from 'cloudinary-svelte';
+  import { Image, Video } from '@cloudinary/svelte';
 </script>
 
 <style>
