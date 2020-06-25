@@ -40,6 +40,11 @@
     font-weight: 100;
   }
 
+  .center-div {
+      display: inline-block;
+      width: 30%;
+  }
+
   .code-wrapper {
     margin: 0 auto;
     text-align: center;
@@ -83,6 +88,30 @@
       {cloud_name}
       public_id={image_public_id}
       transformation={[{ width: 400, height: 400, gravity: 'face', radius: 'max', crop: 'crop' }, { width: 200, crop: 'scale' }]} />
+  </div>
+    <div>
+        <h2>Responsive Image</h2>
+        <div class="code-wrapper">
+            <code>
+              {
+              `<Image
+  cloud_name="${cloud_name}"
+  public_id="${image_public_id}"
+  width="auto"
+  crop="scale"
+  responsive
+/>`
+              }
+            </code>
+        </div>
+        <div class="center-div">
+      <Image
+              {cloud_name}
+              public_id={image_public_id}
+              width="auto"
+              crop="fit"
+              responsive
+      />
   </div>
   <div>
     <h2>Video</h2>

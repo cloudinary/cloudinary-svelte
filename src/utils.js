@@ -25,8 +25,20 @@ const getImageTag = (props) => getTag(props, "image");
  */
 const getVideoTag = (props) => getTag(props, "video");
 
-export {
+/**
+ * Cloudinary underlying JS library will handle responsive behavior
+ * @param {HTMLImageElement} img
+ * @param {object} options
+ */
+const responsive = (img, options) =>{
+  const cld = Cloudinary.new(options); // Initialize cloudinary with new props
+  cld.cloudinary_update(img, options);
+  cld.responsive(options, false);
+};
+
+  export {
   nonEmpty,
   getImageTag,
-  getVideoTag
+  getVideoTag,
+  responsive
 };
