@@ -30,7 +30,7 @@ const getVideoTag = (props) => getTag(props, "video");
  * @param {HTMLImageElement} img
  * @param {object} options
  */
-const responsive = (img, options) =>{
+const makeElementResponsive = (img, options) =>{
   const cld = Cloudinary.new(options); // Initialize cloudinary with new props
   cld.cloudinary_update(img, options);
   cld.responsive(options, false);
@@ -40,5 +40,5 @@ const responsive = (img, options) =>{
   nonEmpty,
   getImageTag,
   getVideoTag,
-  responsive
+  makeElementResponsive
 };

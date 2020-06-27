@@ -1,21 +1,24 @@
 <script>
     /**
      * Cloudinary Image Component
+     * This element binds the underlying <img> element to it's imgElement variable.
+     * imgElement is passed to makeElementResponsive() so it can update the src attribute when needed
      */
-    import {onMount, afterUpdate} from 'svelte';
-    import {getImageTag, responsive} from "./utils";
+    import {afterUpdate} from 'svelte';
+    import {getImageTag, makeElementResponsive} from "./utils";
+
+    /**
+     * Bind imgElement to the underlying <img> element.
+     * @param node - the underlying <img> element's node.
+     */
     const bindImage = (node) => (imgElement = node);
 
     let imgElement; // Reference to underlying <img> element
-    let isResponsive;
-
-    $: attributes = getImageTag($$props).attributes();
+    $: attributes = getImageTag($$props).attributes(); // The <img> attributes, computed on update.
 
     afterUpdate(() => {
-        // Run responsive() only when props.responsive is updated to truthy value
-        isResponsive = $$props.responsive && imgElement && !isResponsive;
-        if (isResponsive) {
-            responsive(imgElement, $$props);
+        if ($$props.responsive && imgElement) {
+            makeElementResponsive(imgElement, $$props);
         }
     });
 </script>
