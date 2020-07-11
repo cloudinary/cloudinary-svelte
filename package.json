@@ -53,6 +53,6 @@
     "dist"
   ],
   "dependencies": {
-    "cloudinary-core": "^2.9.0"
+    "cloudinary-core": "^2.10.3"
   }
 }
