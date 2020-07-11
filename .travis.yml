@@ -4,6 +4,3 @@ node_js:
   - "lts/*"
 before_script:
   - npm run build
-jobs:
-  - name: "src"
-    env: TEST_SUBJECT=src
