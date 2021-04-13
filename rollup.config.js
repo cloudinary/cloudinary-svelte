@@ -19,16 +19,26 @@ export default {
 	plugins: [
     resolve(),
     svelte(),
-    commonjs({
+    commonjs(
+      /*
+       * This is left here for reference
+       * The namedExports option from "@rollup/plugin-commonjs" is deprecated.
+       * Named exports are now handled automatically.
+       */
+
+      /*
+      {
       // We need this to be able to import Cloudinary from cloudinary-core,
       // because it is bundled as commonjs + named export.
       // Otherwise Rollup won't be able to import it.
-      namedExports: {
-        // left-hand side can be an absolute path, a path
-        // relative to the current directory, or the name
-        // of a module in node_modules
-        'cloudinary-core': ['Cloudinary']
+        namedExports: {
+          // left-hand side can be an absolute path, a path
+          // relative to the current directory, or the name
+          // of a module in node_modules
+          'cloudinary-core': ['Cloudinary']
+        }
       }
-    })
+       */
+    )
 	]
 };
