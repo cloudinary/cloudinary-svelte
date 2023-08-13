@@ -1,3 +1,8 @@
+> DEPRECATED
+> 
+> This package has been deprecated, see https://github.com/cloudinary-community/svelte-cloudinary
+>
+
 # cloudinary-svelte
 
 ## Cloudinary components library for Svelte
